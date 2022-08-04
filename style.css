@@ -20,7 +20,6 @@ body {
 @media (max-width:767px) {
   .calculator {
     width: 90%;
-    height: 38rem;
   }
   
 }
