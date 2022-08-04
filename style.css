@@ -17,12 +17,6 @@ body {
   margin: 50px auto;
 }
 
-@media (max-width:767px) {
-  .calculator {
-    width: 90%;
-  }
-  
-}
 
 .output {
   display: flex;
