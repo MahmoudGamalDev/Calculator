@@ -12,6 +12,11 @@ numbers.forEach((num) => {
       let currentOutputValue = currentOutput.textContent + e.target.textContent;
       currentOutput.textContent = currentOutputValue;
     }
+
+    e.target.style.backgroundColor = "white";
+    setTimeout(() => {
+      e.target.style.backgroundColor = "rgb(167, 223, 245)";
+    }, 100);
   });
 });
 
@@ -63,5 +68,10 @@ operations.forEach((op) => {
       previousOutput.textContent = "";
       currentOutput.textContent = "";
     }
+
+    e.target.style.backgroundColor = "white";
+    setTimeout(() => {
+      e.target.style.backgroundColor = "rgb(167, 223, 245)";
+    }, 100);
   });
 });
