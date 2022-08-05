@@ -44,7 +44,11 @@ operations.forEach((op) => {
         previousOutput.textContent !== "" &&
         currentOutput.textContent === ""
       ) {
-        e.preventDefault();
+        if (operation === "-") {
+          currentOutput.textContent += operation;
+        } else {
+          e.preventDefault();
+        }
       } else {
         previousOutput.textContent += currentOutput.textContent + operation;
         currentOutput.textContent = "";
