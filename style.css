@@ -41,6 +41,8 @@ body {
 .output div {
   padding: 10px;
   min-height: 4rem;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .output .previous {
@@ -51,8 +53,6 @@ body {
 .output .current {
   flex: 1;
   font-size: 2rem;
-  word-wrap: break-word;
-  word-break: break-all;
 }
 
 .buttons {

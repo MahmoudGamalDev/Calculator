@@ -25,10 +25,16 @@ operations.forEach((op) => {
     let operation = e.target.textContent;
 
     if (operation === "DEL") {
-      currentOutput.textContent = currentOutput.textContent.slice(
-        0,
-        currentOutput.textContent.length - 1
-      );
+      if (currentOutput.textContent !== "") {
+        currentOutput.textContent = currentOutput.textContent.slice(0, -1);
+      } else {
+        previousOutput.textContent = previousOutput.textContent.slice(0, -1);
+      }
+    }
+
+    if (operation === "AC") {
+      previousOutput.textContent = "";
+      currentOutput.textContent = "";
     }
 
     if (
@@ -56,21 +62,18 @@ operations.forEach((op) => {
     }
 
     if (operation === "=") {
-      if (
-        previousOutput.textContent !== "" &&
-        currentOutput.textContent !== "" &&
-        !previousOutput.textContent.includes("=")
-      ) {
+      if (!previousOutput.textContent.includes("=")) {
         previousOutput.textContent += currentOutput.textContent + operation;
         currentOutput.textContent = eval(
           previousOutput.textContent.slice(0, -1)
         );
       }
-    }
 
-    if (operation === "AC") {
-      previousOutput.textContent = "";
-      currentOutput.textContent = "";
+      if (previousOutput.textContent.includes("=")) {
+        currentOutput.textContent = eval(
+          previousOutput.textContent.slice(0, -1)
+        );
+      }
     }
 
     e.target.style.backgroundColor = "white";
